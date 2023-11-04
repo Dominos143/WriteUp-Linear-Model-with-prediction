@@ -16,5 +16,23 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ```
 
 
+## Model 1 SIMS~ARM
+### Scattered Plot
+
+
+```{r}
+basicCN <- ggplot(data,aes(x=SIMS,y=ARM))
+
+```
+
+```{r}
+basicCN + geom_point()+ ggtitle("SIMS vs ARM")
+
+```
+
+
+This scatter plot reflects a positive correlation since some of the dots are showing a behavior of going up diagonally.
+
+
 
 
