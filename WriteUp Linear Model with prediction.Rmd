@@ -21,12 +21,12 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 
 ```{r}
-basicCN <- ggplot(data,aes(x=SIMS,y=ARM))
+basicNN <- ggplot(data,aes(x=SIMS,y=ARM))
 
 ```
 
 ```{r}
-basicCN + geom_point()+ ggtitle("SIMS vs ARM")
+basicNN + geom_point()+ ggtitle("SIMS vs ARM")
 
 ```
 
@@ -41,4 +41,40 @@ cor(SIMS~ARM,data=data)
 ```
 
 The numerical results confirmed the positive corelation of the scatter plot of SIM vs ARM 
+
+
+### Inferential Results Model 1 
+
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
+### Create target 
+
+```{r}
+target <- data.frame(ARM= 88, GRIP=44)
+```
+
+### Perdict Target Point of Model 1 
+
+```{r}
+predict(model.1,target,interval=c("prediction"))
+```
+
+### Scatter Plot for Model 1 with linear fit 
+
+
+```{r}
+basicNN <- ggplot(data,aes(x=SIMS,y=ARM))
+
+```
+
+```{r}
+basicNN + geom_point()+ ggtitle("SIMS vs ARM")+geom_smooth(method=lm)
+
+```
+
+
+
 
