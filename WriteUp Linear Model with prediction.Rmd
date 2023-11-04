@@ -34,5 +34,11 @@ basicCN + geom_point()+ ggtitle("SIMS vs ARM")
 This scatter plot reflects a positive correlation since some of the dots are showing a behavior of going up diagonally.
 
 
+### Numerical results
+
+```{r}
+cor(SIMS~ARM,data=data)
+```
+
 
 
