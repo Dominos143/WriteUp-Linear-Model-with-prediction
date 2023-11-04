@@ -98,5 +98,8 @@ This scatter plot tells us the grip strength that workers need. The plot tells u
 cor(SIMS~GRIP,data=data)
 ```
 
+This correlation value is lower than the SIMS vs ARM correlation value with 0.6860073 which tells us that SIMS vs ARM has a better fit than SIMS vs GRIP. 
+
+
 
 
